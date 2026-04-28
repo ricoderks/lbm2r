@@ -1,0 +1,29 @@
+Package: lbm2r
+Title: Read and Write MSDIAL LBM2 Lipid Database Files
+Version: 0.1.0
+Authors@R: 
+    person("Rico", "Derks", , role = c("aut", "cre"),
+           email = "r.j.e.derks@lumc.nl")
+Description: Provides functions to read and write the binary LBM2 format used
+    by MS-DIAL as its in-silico lipid MS/MS spectral library. The LBM2 format
+    stores lipid records serialized with MessagePack and compressed with LZ4.
+    Each record contains compound metadata (name, formula, SMILES, InChIKey,
+    adduct, retention time, collision cross-section, etc.) and the associated
+    MS/MS peak list. This package allows users to inspect, modify, and create
+    LBM2 databases entirely within R.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    Rcpp,
+    RcppMsgPack
+LinkingTo:
+    Rcpp
+Depends:
+    R (>= 4.0.0)
+SystemRequirements: liblz4-dev
+Suggests:
+    testthat (>= 3.0.0),
+    hdf5r
+Config/testthat/edition: 3
